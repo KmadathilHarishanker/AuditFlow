@@ -120,13 +120,6 @@ To support additional file formats:
 3. Add the case to the switch statement in the upload handler
 4. Update the stats tracking
 
-### Database Integration
-
-Currently, the application uses in-memory storage. For production:
-
-1. Install a database driver (e.g., `mongoose` for MongoDB)
-2. Replace the in-memory arrays with database operations
-3. Add proper error handling and data validation
 
 ## Deployment
 
@@ -141,39 +134,3 @@ The application is configured for Azure Web App deployment via GitHub Actions:
 - `PORT`: Server port (default: 3000)
 - `NODE_ENV`: Environment mode (development/production)
 
-## Security Considerations
-
-- File uploads are validated for type and size
-- Uploaded files are stored in a separate directory
-- Consider implementing authentication for production use
-- Add rate limiting for API endpoints
-- Implement proper error handling and logging
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Port already in use**
-   - Change the port in `bin/www` or set `PORT` environment variable
-
-2. **File upload fails**
-   - Check file size (max 10MB)
-   - Verify file format (CSV, JSON, XML only)
-   - Ensure uploads directory has write permissions
-
-3. **Power BI connection fails**
-   - Verify the API endpoint is accessible
-   - Check CORS settings if needed
-   - Ensure the application is running
-
-## License
-
-This project is licensed under the MIT License.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request 
